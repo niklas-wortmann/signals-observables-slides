@@ -10,7 +10,7 @@ info: |
 
   Learn more at [Sli.dev](https://sli.dev)
 drawings:
-  persist: false
+  presenterOnly: true
 defaults:
   layout: default
 title: Reactivity in Angular Applications - Signals vs. Observables
