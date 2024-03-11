@@ -189,7 +189,8 @@ transition: view-transition
 # Let's have a look at Signals
 
 ---
-transition: slide-left
+transition: view-transition
+preload: false
 ---
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
@@ -215,8 +216,9 @@ transition: slide-left
 </div>
 <div class='absolute w-full h-full' style='top: 45%'>
   <div class='flex w-full items-center justify-around flex-1'>
-    <div class='text-6xl font-bold text-red-600 rotate-315'>UI State</div>
-    <div class='text-6xl font-bold text-red-600 rotate-315'>UI State</div>
+    <div v-motion :initial="{ opacity: 0, rotate: '0deg' }" :enter="{ opacity: 1,  rotate: '-45deg' }" class='text-6xl font-bold text-red-600 rotate-315'>UI State</div>
+    <div v-motion :initial="{ opacity: 0, rotate: '0deg' }" :enter="{ opacity: 1,  rotate: '-45deg' }" class='text-6xl font-bold text-red-600 rotate-315 text-center'>
+        <span>'Everything'</span><br><span>Else</span></div>
   </div>
 </div>
 
@@ -240,53 +242,66 @@ transition: view-transition
 </div>
 
 
-[//]: # (---)
+---r
+---
 
-[//]: # (---)
+````md magic-move
 
-[//]: # (````md magic-move)
+```angular-ts
 
-[//]: # (```angular-ts)
+Component({
 
-[//]: # (Component&#40;{)
+  standalone: true,
 
-[//]: # (  standalone: true,)
+  template:`<div *ngIf="someCondition">
 
-[//]: # (  template:`<div *ngIf="someCondition">)
+     <div *ngFor="let item of source$ | async"></div>
 
-[//]: # (     <div *ngFor="let item of source$ | async"></div>)
+  </div>`,
 
-[//]: # (  </div>`,)
+})
 
-[//]: # (}&#41;)
+export class FooComponent {
 
-[//]: # (export class FooComponent {)
+  source$ = inject(Service).someMethod();
 
-[//]: # (  source$ = inject&#40;Service&#41;.someMethod&#40;&#41;;)
+}
 
-[//]: # (})
+```
 
-[//]: # (```)
 
-[//]: # ()
-[//]: # (```angular-ts)
+```angular-ts
 
-[//]: # (@Component&#40;{)
+@Component({
 
-[//]: # (  standalone: true,)
+  standalone: true,
 
-[//]: # (  template:`{{ counter&#40;&#41; }}`,)
+  template:`{{ counter() }}`,
 
-[//]: # (}&#41;)
+})
 
-[//]: # (export class FooComponent {)
+export class FooComponent {
 
-[//]: # (  counter$ = interval&#40;1000&#41;;)
+  counter$ = interval(1000);
 
-[//]: # (  counter = toSignal&#40;this.counter$, { initialValue: 0 }&#41;;)
+  counter = toSignal(this.counter$, { initialValue: 0 });
 
-[//]: # (})
+}
 
-[//]: # (```)
+```
 
-[//]: # (````)
+````
+
+---
+---
+
+# Thanks for listening 🙏
+
+<div class="flex w-full items-center justify-center">
+    <a href="https://wordman.dev/talk/ngconf2024">
+        <qrcode value="https://wordman.dev/talk/ngconf2024" class="mb-2 mt-2"> </qrcode>
+        <span>https://wordman.dev/talk/ngconf2024</span>
+    </a>
+</div>
+
+
