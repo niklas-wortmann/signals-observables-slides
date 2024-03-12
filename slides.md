@@ -189,7 +189,6 @@ transition: view-transition
 # Let's have a look at Signals
 
 ---
-transition: view-transition
 preload: false
 ---
 <div class='flex flex-col h-full'>
@@ -241,8 +240,115 @@ transition: view-transition
   <span class='text-4xl'>Corse-Grained Reactivity</span>
 </div>
 
+---
+layout: cover
+---
+# But How?
 
----r
+---
+transition: view-transition
+---
+
+<h1>Basically *every* Angular Application</h1>
+<div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name='state-container'">
+</div>
+
+<style>
+.bar {
+    background: white;
+    color: black
+}
+</style>
+
+---
+transition: view-transition
+---
+
+<h1 style="view-transition-name:'headline'">Basically *every* Angular Application</h1>
+<div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name:'state-container'">
+    <div class="w-full h-5 flex items-center mb-1 justify-center bar p-6 rounded-md">State</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md">Abstraction</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md">UI</div>
+</div>
+
+<style>
+.bar {
+    background: white;
+    color: black
+}
+</style>
+
+---
+transition: view-transition
+---
+
+<h1 style="view-transition-name:'headline'">Signals?</h1>
+<div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name:'state-container'">
+    <div class="w-full h-5 flex items-center mb-1 justify-center bar p-6 rounded-md" style="view-transition-name:'bar-1'">State</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md" style="view-transition-name:'bar-2'">Abstraction</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md" style="view-transition-name:'bar-3'">UI</div>
+</div>
+
+<style>
+.bar {
+    background: white;
+    color: black
+}
+</style>
+
+---
+transition: view-transition
+---
+
+<h1 style="view-transition-name:'headline'">Signals?</h1>
+<div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name:'state-container'">
+    <div class="w-full h-5 flex items-center mb-1 justify-center bar p-6 rounded-md" style="view-transition-name:'bar-1'">State</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md bar-active" style="view-transition-name:'bar-2'">Abstraction</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md bar-active" style="view-transition-name:'bar-3'">UI</div>
+</div>
+
+<style>
+.bar {
+    background: white;
+    color: black
+}
+
+.bar-active {
+    background: var(--onu-colors-cyan400);
+    color: white
+}
+</style>
+
+---
+---
+
+<h1 style="view-transition-name:'headline'">Observables?</h1>
+<div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name:'state-container'">
+    <div class="w-full h-5 flex items-center mb-1 justify-center bar p-6 rounded-md bar-active" style="view-transition-name:'bar-1'">State</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md bar-active" style="view-transition-name:'bar-2'">Abstraction</div>
+    <div class="w-full h-5 flex items-center m-1 justify-center bar p-6 rounded-md" style="view-transition-name:'bar-3'">UI</div>
+</div>
+
+<style>
+.bar {
+    background: white;
+    color: black
+}
+
+.bar-active {
+    background: var(--onu-colors-pink700);
+    color: white
+}
+</style>
+
+---
+---
+
+<div class="w-full h-full flex items-center justify-center">
+    <img src='inception-deeper.gif' alt="Gif from Inception, showing Leo saying 'We Need to Go Deeper'"/>
+</div>
+
+---
 ---
 
 ````md magic-move
@@ -298,9 +404,9 @@ export class FooComponent {
 # Thanks for listening 🙏
 
 <div class="flex w-full items-center justify-center">
-    <a href="https://wordman.dev/talk/ngconf2024">
-        <qrcode value="https://wordman.dev/talk/ngconf2024" class="mb-2 mt-2"> </qrcode>
-        <span>https://wordman.dev/talk/ngconf2024</span>
+    <a href="https://wordman.dev/talk/2024/ngconf">
+        <qrcode value="https://wordman.dev/talk/2024/ngconf" class="mb-2 mt-2"> </qrcode>
+        <span>https://wordman.dev/talk/2024/ngconf</span>
     </a>
 </div>
 
