@@ -342,11 +342,12 @@ transition: view-transition
 </style>
 
 ---
+layout: image
+image: ./inception-deeper.gif
+backgroundSize: inherit
+
 ---
 
-<div class="w-full h-full flex items-center justify-center">
-    <img src='inception-deeper.gif' alt="Gif from Inception, showing Leo saying 'We Need to Go Deeper'"/>
-</div>
 
 ---
 ---
