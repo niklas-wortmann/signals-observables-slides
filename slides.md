@@ -32,6 +32,15 @@ p {
 </style>
 
 ---
+layout: quote
+author: George Santayana
+quote: Those who cannot remember the past are condemned to repeat it.
+image: ./george-santayana.jpg
+---
+
+# Those who cannot remember the past are condemned to repeat it.
+
+---
 layout: image-left
 image: ./headshot.png
 ---
