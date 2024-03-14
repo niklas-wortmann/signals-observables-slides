@@ -18,7 +18,7 @@ monaco: false
 layout: cover
 mdc: true
 transition: slide-left
-
+favicon: ./favicon.png
 ---
 
 # Reactivity in Angular Applications
@@ -117,12 +117,36 @@ transition: view-transition
     <div  style='view-transition-name: right-text' class='flex-1'>
       <ul>
         <li>"a pre-Renaissance painter"</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+transition: view-transition
+---
+<div class='flex flex-col h-full'>
+  <div class='flex w-full items-center justify-around'>
+    <div class='text-4xl pr-1 text-gray-600' style='view-transition-name: left'> Reactive </div>
+    <div class='text-4xl pl-1' style='view-transition-name: right'> Primitive </div>
+  </div>
+
+  <div class='flex w-full items-center justify-around flex-1'>
+    <div style='view-transition-name: left-text' class='text-gray-600 flex-1'>
+      <ul>
+        <li>Propagation of Change</li>
+        <li>react to data changes/events</li>
+      </ul>
+    </div>
+    <div  style='view-transition-name: right-text' class='flex-1'>
+      <ul>
         <li>Fundamental Data Type</li>
         <li>First-Class support</li>
       </ul>
     </div>
   </div>
 </div>
+
 
 ---
 transition: view-transition
@@ -154,7 +178,7 @@ transition: view-transition
       <ul>
         <li>synchronous</li>
         <li>imperative</li>
-        <li>publicly exposed Producer</li>
+        <li>publicly exposed producer</li>
       </ul>
     </div>
     <div style='view-transition-name: right-text' class='flex-1'></div>
@@ -198,8 +222,8 @@ transition: view-transition
 # Let's have a look at Signals
 
 ---
-preload: false
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1' style='view-transition-name: left'> Signals </div>
@@ -207,17 +231,17 @@ preload: false
   </div>
   <div class='flex w-full items-center justify-around flex-1'>
     <div style='view-transition-name: left-text' class='flex-1'>
-      <ul>
-        <li>synchronous</li>
-        <li>imperative</li>
-        <li>publicly exposed producer</li>
+      <ul class="list">
+        <li class="list-item">synchronous</li>
+        <li class="list-item">imperative</li>
+        <li class="list-item">publicly exposed producer</li>
       </ul>
     </div>
     <div style='view-transition-name: right-text' class='flex-1'>
-      <ul>
-        <li>asynchronous or synchronous</li>
-        <li>declarative</li>
-        <li>hidden producer</li>
+      <ul class="list">
+        <li class="list-item">asynchronous or synchronous</li>
+        <li class="list-item">declarative</li>
+        <li class="list-item">hidden producer</li>
       </ul>
     </div>
   </div>
@@ -229,6 +253,7 @@ preload: false
         <span>'Everything'</span><br><span>Else</span></div>
   </div>
 </div>
+
 
 ---
 transition: view-transition
@@ -411,7 +436,7 @@ export class FooComponent {
 ---
 ---
 
-# Thanks for listening 🙏
+# Thanks for Listening 🙏
 
 <div class="flex w-full items-center justify-center">
     <a href="https://wordman.dev/talk/2024/ngconf">
