@@ -3,7 +3,7 @@ theme: wordman
 background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
-lineNumbers: true
+lineNumbers: false
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -22,12 +22,14 @@ favicon: ./favicon.png
 ---
 
 # Reactivity in Angular Applications
+
 Signals vs Observables
 
 <style>
 p {
   margin-top: 1.5rem !important;
   font-size: 2.5rem;
+  color: var(--onu-colors-cyan800);
 }
 </style>
 
@@ -44,6 +46,7 @@ image: ./george-santayana.jpg
 layout: image-left
 image: ./headshot.png
 ---
+
 <div class='flex items-center h-full'>
   <div class="grid grid-cols-2 gap-4">
     <card title='Developer Advocate' imagePath='jbLogo.png' imageAlt='JetBrains Logo'></card>
@@ -62,10 +65,10 @@ transition: view-transition
   <div class='text-6xl pl-1' style='view-transition-name: right'> Primitive </div>
 </div>
 
-
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1' style='view-transition-name: left'> Reactive </div>
@@ -81,6 +84,7 @@ transition: view-transition
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1' style='view-transition-name: left'> Reactive </div>
@@ -101,6 +105,7 @@ transition: view-transition
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1 text-gray-600' style='view-transition-name: left'> Reactive </div>
@@ -125,6 +130,7 @@ transition: view-transition
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1 text-gray-600' style='view-transition-name: left'> Reactive </div>
@@ -147,10 +153,10 @@ transition: view-transition
   </div>
 </div>
 
-
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1' style='view-transition-name: left'> Signals </div>
@@ -167,6 +173,7 @@ transition: view-transition
 ---
 transition: view-transition
 ---
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1' style='view-transition-name: left'> Signals </div>
@@ -186,7 +193,7 @@ transition: view-transition
 </div>
 
 ---
----
+
 <div class='flex flex-col h-full'>
   <div class='flex w-full items-center justify-around'>
     <div class='text-4xl pr-1 text-gray-600' style='view-transition-name: left'> Signals </div>
@@ -212,16 +219,13 @@ transition: view-transition
 </div>
 
 ---
----
 
 # Let's have a look at Observables
 
 ---
----
 
 # Let's have a look at Signals
 
----
 ---
 
 <div class='flex flex-col h-full'>
@@ -254,7 +258,6 @@ transition: view-transition
   </div>
 </div>
 
-
 ---
 transition: view-transition
 ---
@@ -266,7 +269,6 @@ transition: view-transition
 </div>
 
 ---
----
 
 <div class='flex w-full h-full items-center justify-around flex-col'>
   <span class='text-4xl'>Fine-Grained Reactivity</span>
@@ -277,6 +279,7 @@ transition: view-transition
 ---
 layout: cover
 ---
+
 # But How?
 
 ---
@@ -354,7 +357,6 @@ transition: view-transition
 </style>
 
 ---
----
 
 <h1 style="view-transition-name:'headline'">Observables?</h1>
 <div class="flex flex-col items-center justify-center" style="height: calc(100% - 80px); view-transition-name:'state-container'">
@@ -379,61 +381,79 @@ transition: view-transition
 layout: image
 image: ./inception-deeper.gif
 backgroundSize: inherit
-
 ---
 
+---
+src: ./slides/ui-state.md
+---
 
 ---
+src: ./slides/service-with-a-signal.md
 ---
+
+---
+transition: view-transition
+---
+<h1 style="view-transition-name='slide-headline"> Never Do This </h1>
+<div class='text-8xl absolute z-5' style="color: var(--onu-colors-red600); right: 0; bottom: 165px"><mdi:close-thick /></div>
 
 ````md magic-move
-
 ```angular-ts
+@Component({})
+export class AppComponent {
+  private city = signal('Kansas City');
+  private weather = signal({});
 
-Component({
-
-  standalone: true,
-
-  template:`<div *ngIf="someCondition">
-
-     <div *ngFor="let item of source$ | async"></div>
-
-  </div>`,
-
-})
-
-export class FooComponent {
-
-  source$ = inject(Service).someMethod();
-
+  constructor(private weatherService: WeatherService) {
+    effect(async () => {
+      const weather = await this.weatherService.getWeather(this.city());
+      this.weather.set(weather)
+    }, {allowSignalWrites: true});
+  }
 }
-
 ```
 
-
 ```angular-ts
+@Injectable()
+export class AppComponent {
+  private city = signal('Kansas City');
+  private weather = signal({});
 
-@Component({
-
-  standalone: true,
-
-  template:`{{ counter() }}`,
-
-})
-
-export class FooComponent {
-
-  counter$ = interval(1000);
-
-  counter = toSignal(this.counter$, { initialValue: 0 });
-
+  constructor(private weatherService: WeatherService) {
+    effect(async () => {
+      const weather = await this.weatherService.getWeather(this.city());
+      this.weather.set(weather)
+    }, {allowSignalWrites: true});
+  }
 }
-
 ```
-
 ````
 
 ---
+preload: false
+---
+<h1 style="view-transition-name='slide-headline"> Do This Instead </h1>
+<div class='text-8xl absolute z-5' style="color: var(--onu-colors-green600); right: 0; bottom: 165px"><mdi:check-thick v-motion v-motion-roll-visible-right/></div>
+
+```console
+$ ng add ngxtension
+```
+
+```angular-ts
+import { computedAsync } from 'ngxtension/computed-async';
+
+@Component({})
+export class AppComponent {
+  private city = signal('Kansas City');
+  private weather = computedAsync(() => this.weatherService.getWeather(this.city()));
+}
+```
+
+<style>
+.shiki {margin-bottom: 2.5rem}
+
+h1 {margin-bottom: 2rem!important;}
+</style>
 ---
 
 # Thanks for Listening 🙏
@@ -444,5 +464,3 @@ export class FooComponent {
         <span>https://wordman.dev/talk/2024/ngconf</span>
     </a>
 </div>
-
-

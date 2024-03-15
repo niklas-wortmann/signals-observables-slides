@@ -1,14 +1,11 @@
-import defaults from "../.prettierrc.js"
-
 export default {
-  ...defaults,
-  "overrides": [
+  overrides: [
     {
-      "files": ["slides.md", "pages/*.md"],
-      "options": {
-        "parser": "slidev",
-        "plugins": ["prettier-plugin-slidev"]
-      }
-    }
-  ]
+      files: ["slides.md"],
+      options: {
+        parser: "slidev",
+        plugins: ["prettier-plugin-slidev"],
+      },
+    },
+  ],
 };
