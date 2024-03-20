@@ -394,6 +394,7 @@ src: ./slides/service-with-a-signal.md
 ---
 transition: view-transition
 ---
+
 <h1 style="view-transition-name='slide-headline"> Never Do This </h1>
 <div class='text-8xl absolute z-5' style="color: var(--onu-colors-red600); right: 0; bottom: 165px"><mdi:close-thick /></div>
 
@@ -432,6 +433,7 @@ export class AppComponent {
 ---
 preload: false
 ---
+
 <h1 style="view-transition-name='slide-headline"> Do This Instead </h1>
 <div class='text-8xl absolute z-5' style="color: var(--onu-colors-green600); right: 0; bottom: 165px"><mdi:check-thick v-motion v-motion-roll-visible-right/></div>
 
@@ -454,6 +456,7 @@ export class AppComponent {
 
 h1 {margin-bottom: 2rem!important;}
 </style>
+
 ---
 
 # Thanks for Listening 🙏
