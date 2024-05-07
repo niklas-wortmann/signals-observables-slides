@@ -15,23 +15,17 @@ defaults:
   layout: default
 title: Reactivity in Angular Applications - Signals vs. Observables
 monaco: false
-layout: cover
+layout: image
+image: /title.png
 mdc: true
 transition: slide-left
 favicon: ./favicon.png
 ---
 
-# Reactivity in Angular Applications
-
-Signals vs Observables
-
-<style>
-p {
-  margin-top: 1.5rem !important;
-  font-size: 2.5rem;
-  color: var(--onu-colors-cyan800);
-}
-</style>
+<div style="position: absolute; margin: auto; bottom: 80px; left: 104px;">
+    <h1 style="font-size: 3.2rem;color: #e42d30;"> Reactivity in Angular Applications</h1>
+    <h2>Signals vs Observables</h2>
+</div>
 
 ---
 layout: quote
@@ -220,6 +214,36 @@ transition: view-transition
 
 ---
 
+# Let's Break it Down
+
+---
+
+<div class='flex flex-col h-full'>
+  <div class='flex w-full items-center justify-around'>
+    <div class='text-4xl pr-1' style='view-transition-name: left'> Signals </div>
+    <div class='text-4xl pl-1' style='view-transition-name: right'> Observables </div>
+  </div>
+
+  <div class='flex w-full items-center justify-around flex-1'>
+    <div style='view-transition-name: left-text' class='flex-1 text-gray-600'>
+      <ul>
+        <li>"Always some Value"</li>
+        <li>"Give me the current Value"</li>
+        <li>Clean up after Yourself</li>
+      </ul>
+    </div>
+    <div style='view-transition-name: right-text' class='flex-1'>
+      <ul>
+        <li>"Maybe a value?!"</li>
+        <li>"Notify me!"</li>
+        <li>"Don't worry about Cleanup"</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
 # Let's have a look at Observables
 
 ---
@@ -388,6 +412,10 @@ src: ./slides/ui-state.md
 ---
 
 ---
+src: ./slides/not-live-signal.md
+---
+
+---
 src: ./slides/service-with-a-signal.md
 ---
 
@@ -456,6 +484,12 @@ export class AppComponent {
 
 h1 {margin-bottom: 2rem!important;}
 </style>
+
+---
+layout: center
+---
+
+# Do You Have Any Questions?
 
 ---
 
