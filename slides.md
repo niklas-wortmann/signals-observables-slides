@@ -402,6 +402,22 @@ transition: view-transition
 </style>
 
 ---
+layout: cover
+---
+
+# Signal When:
+
+<h2 v-click> Does it make sense to get the current value at any time? </h2>
+
+---
+layout: cover
+---
+
+# Observables When:
+
+<h2 v-click> Events and Everything Else </h2>
+
+---
 layout: image
 image: ./inception-deeper.gif
 backgroundSize: inherit
@@ -486,6 +502,44 @@ h1 {margin-bottom: 2rem!important;}
 </style>
 
 ---
+transition: view-transition
+---
+
+<h1>New Signal Based APIs</h1>
+
+````md magic-move
+```angular-ts
+@Component({})
+export class AppComponent {
+  @Input() value: string;
+  @Output() valueChange = new EventEmitter<string>();
+}
+```
+
+```angular-ts
+@Component({})
+export class AppComponent {
+  value = input<string>("")
+  valueChange = output<string>();
+}
+```
+
+```angular-ts
+@Component({})
+export class AppComponent {
+  value = model<string>("")
+}
+```
+
+```angular-ts
+@Component({})
+export class AppComponent {
+  value = model<string>("")
+}
+```
+````
+
+---
 layout: center
 ---
 
@@ -496,8 +550,8 @@ layout: center
 # Thanks for Listening 🙏
 
 <div class="flex w-full items-center justify-center">
-    <a href="https://wordman.dev/talk/2024/ngconf">
-        <qrcode value="https://wordman.dev/talk/2024/ngconf" class="mb-2 mt-2"> </qrcode>
-        <span>https://wordman.dev/talk/2024/ngconf</span>
+    <a href="https://www.wordman.dev/talk/2024/techorama-angular">
+        <qrcode value="https://www.wordman.dev/talk/2024/techorama-angular" class="mb-2 mt-2"> </qrcode>
+        <span>https://www.wordman.dev/talk/2024/techorama-angular</span>
     </a>
 </div>
