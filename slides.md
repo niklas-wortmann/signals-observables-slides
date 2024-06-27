@@ -15,17 +15,23 @@ defaults:
   layout: default
 title: Reactivity in Angular Applications - Signals vs. Observables
 monaco: false
-layout: image
-image: /title.png
+layout: cover
 mdc: true
 transition: slide-left
 favicon: ./favicon.png
 ---
 
-<div style="position: absolute; margin: auto; bottom: 80px; left: 104px;">
-    <h1 style="font-size: 3.2rem;color: #e42d30;"> Reactivity in Angular Applications</h1>
-    <h2>Signals vs Observables</h2>
-</div>
+# Reactivity in Angular Applications
+
+Signals vs Observables
+
+<style>
+p {
+  margin-top: 1.5rem !important;
+  font-size: 2.5rem;
+  color: var(--onu-colors-cyan800);
+}
+</style>
 
 ---
 layout: quote
@@ -49,6 +55,11 @@ image: ./headshot.png
     <card title='Host' imagePath='podcastLogo.png' imageAlt='Angular Plus Show Podcast Logo'></card>
   </div>
 </div>
+
+---
+layout: image
+image: /kcdc24_sponsorslide.jpeg
+---
 
 ---
 transition: view-transition
