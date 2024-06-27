@@ -561,8 +561,8 @@ layout: center
 # Thanks for Listening 🙏
 
 <div class="flex w-full items-center justify-center">
-    <a href="https://www.wordman.dev/talk/2024/techorama-angular">
-        <qrcode value="https://www.wordman.dev/talk/2024/techorama-angular" class="mb-2 mt-2"> </qrcode>
-        <span>https://www.wordman.dev/talk/2024/techorama-angular</span>
+    <a href="https://www.wordman.dev/talk/2024/angular-kcdc">
+        <qrcode value="https://www.wordman.dev/talk/2024/angular-kcdc" class="mb-2 mt-2"> </qrcode>
+        <span>https://www.wordman.dev/talk/2024/angular-kcdc</span>
     </a>
 </div>
